@@ -1,0 +1,115 @@
+name,online_order,new_customer,rate,approved,price(for two couples),dish_type
+Jowi Center,No,No,2.8,28,480,Cocktail
+Kalama,No,No,3.2,22,180,Cocktail
+Sugar Belt,No,Yes,3.6,39,350,Cocktail
+Pundo ,No,Yes,3.6,153,1500,Cocktail
+Alot Nyale,Yes,Yes,5,146,920,Cocktail
+Meda Restaurant,No,Yes,2.4,14,1160,Cocktail
+Ngesa Pizaa,Yes,No,3.6,42,1320,Cocktail
+Sirwa Restaurant,Yes,No,3.6,0,800,Cocktail
+Geta,No,Yes,4.2,66,480,Cocktail
+Mbita Foods,No,No,5.2,4401,1180,Cocktail
+Lwanda ,No,No,2.4,31,1160,Cocktail
+Kanyakanyada Hotel,Yes,Yes,2.4,7,1500,Cocktail
+Mbuta Hotel,Yes,No,3.2,21,250,Cocktail
+Mayaka Café,Yes,No,3.2,0,180,Cocktail
+Sudan Manyien,No,Yes,3.2,0,920,Cocktail
+Apora Chumbi,No,Yes,3.2,0,1160,Cocktail
+Kanyasakwa,No,Yes,2.2,9,480,Cocktail
+Baridi,No,Yes,6.2,775,1500,Buffet
+Leo,No,No,6.2,787,1200,Buffet
+Samaki Café,Yes,No,3.6,918,1320,Buffet
+Nyama,No,Yes,3.2,88,480,Buffet
+Mamba Village,No,No,3.6,166,1180,Buffet
+Kilifi Café,Yes,No,3.6,286,2000,Buffet
+Simba Bar and Restaurant,Yes,Yes,2.8,8,1500,Buffet
+Masomo,Yes,Yes,6,2556,1180,Cafes
+Kazi,Yes,No,5,504,250,Cafes
+Babu Café,No,Yes,6.2,402,180,Cafes
+Shida,Yes,Yes,5,150,1180,Cafes
+Kachumbari,No,Yes,5,164,180,Cafes
+Mashamba,Yes,No,4.2,424,450,Cafes
+Dalaru Café,Yes,No,3.6,918,1320,Cafes
+Vako,No,Yes,3.6,90,650,Cafes
+Café Boy,No,Yes,7,133,1320,Cafes
+Oyani,No,No,3.6,144,1320,Cafes
+Tale Café,No,Yes,7,93,480,Cafes
+360 Degrees Bar and Restaurant,No,No,5,13,920,Cafes
+Karibu Café,Yes,Yes,4.4,62,920,Cafes
+Choma Zone,No,No,3.2,180,180,Cafes
+Café Noma,No,No,2.8,28,900,Cafes
+Tea Zone,Yes,No,2.8,62,1180,Cafes
+Aliya Zone,Yes,Yes,3.2,31,1200,Cafes
+Mlima,Yes,Yes,2.2,11,1180,Cafes
+Osiepe Bar and Restaurant,Yes,No,3.6,75,1160,Cafes
+Ukweli Café,Yes,No,2.1,4,180,Cafes
+Rumba Lola,No,Yes,2.1,23,250,Cafes
+Sikia Café,Yes,No,3.6,148,250,Cafes
+Red Berrets,Yes,Yes,4.2,219,1180,Cafes
+Chai Maliet,No,Yes,7,35,180,Bento_boxes
+Keth Nyingi,No,Yes,7,172,350,Bento_boxes
+Los Dendi,No,Yes,7,230,650,Bento_boxes
+Rawu Kawuono,Yes,No,5.6,91,920,Bento_boxes
+Peru Restaurant,Yes,Yes,5,1647,1180,Bento_boxes
+Baba,No,No,4.2,17,1350,Bento_boxes
+Orwaki,Yes,No,3.6,133,1160,Bento_boxes
+Riza's Pilau,No,No,7,28,480,Bento_boxes
+McDonald's,Yes,No,7,286,180,Bento_boxes
+Domino's Pizza,Yes,No,7,540,1320,Bento_boxes
+Mlima,Yes,Yes,3.6,36,920,Bento_boxes
+Rola Pilau,No,No,2.8,244,480,Bento_boxes
+Masiku,No,No,4.2,804,450,Bento_boxes
+Funga Pizza,No,Yes,3.2,679,850,Bento_boxes
+Mit Abila,Yes,No,5,245,480,Bento_boxes
+Mentoo,Yes,No,3.2,21,450,Bento_boxes
+Check Point,Yes,No,6.2,28,1350,Bento_boxes
+Oyani Nyale,Yes,Yes,3.8,345,920,Bento_boxes
+Mutura Kende,No,No,4.2,618,1200,Bento_boxes
+Masiku Zinapita,No,No,4.2,1047,450,Bento_boxes
+Chien Kiyany,No,No,7,627,450,Bento_boxes
+Pk Bichaloni,Yes,Yes,3.6,104,480,Bento_boxes
+Mama Bor Restaurant,Yes,Yes,2.8,55,1160,Bento_boxes
+Kaka Wanene,No,No,3.2,17,920,Bento_boxes
+Kalusu,Yes,Yes,2.8,163,1320,Bento_boxes
+Kogalo Pilau,No,Yes,3.6,58,1500,Bento_boxes
+Kamongo Zone ,No,Yes,4.2,808,850,Bento_boxes
+Ringa ,Yes,No,3.2,78,1350,Bento_boxes
+Mumi Nyale,Yes,No,6.2,1720,920,Bento_boxes
+Matuu Yelp,No,No,2.8,34,1200,Bento_boxes
+Huma Manu,Yes,No,6.2,868,1320,Bento_boxes
+Sugar Zone,Yes,No,3.6,39,480,Bento_boxes
+Bunge ,No,No,2.2,71,1180,Bento_boxes
+Kayonge Nyale,Yes,Yes,2.8,6,180,Bento_boxes
+Ruma Café,Yes,Yes,6.2,520,480,Bento_boxes
+Aluru ,Yes,No,6.2,0,1350,Bento_boxes
+Mayange Watu,Yes,No,2.8,299,1500,Bento_boxes
+Kape,No,Yes,2.8,0,180,Bento_boxes
+Sungu Sungu,No,No,6.2,558,1350,Bento_boxes
+Manu Hotel,Yes,No,8,283,1180,Set_Menu
+Funga Restaurant,Yes,No,2.1,62,1320,Set_Menu
+Babyna Soup,Yes,No,3.6,64,250,Set_Menu
+Kaluwa,No,Yes,3.2,39,950,Set_Menu
+Pata Pata,Yes,No,3.2,65,1500,Set_Menu
+Mayola ,Yes,No,3.6,71,920,Set_Menu
+Suba Raha,Yes,No,2.4,52,480,Set_Menu
+Wanyala,Yes,Yes,3.2,130,1160,Set_Menu
+Majuu Majuu,No,No,2.4,10,480,Set_Menu
+Café Kachieng',Yes,No,4.5,45,920,Set_Menu
+Baba Biro Hotel,Yes,Yes,2.2,11,1180,Set_Menu
+Kasoka,No,No,2.4,13,480,Set_Menu
+Kahawa Hotel,Yes,Yes,7.1,8,1500,Set_Menu
+Mahoma,Yes,No,7.1,0,250,Set_Menu
+Peng' Pizaa,No,Yes,2.2,9,480,Set_Menu
+Karaya Ni e Kendo,Yes,No,2.2,4,480,Set_Menu
+Rikana Hotel,No,No,2.2,0,1160,Set_Menu
+Nyatoto Bar and Restaurant,No,Yes,5,29,1350,Set_Menu
+Kiio,No,No,7.1,8,920,Set_Menu
+Mayange Safi,No,No,7.1,0,1350,Set_Menu
+Tamu Café,Yes,No,4.2,324,1320,Family_style
+Maliet,Yes,Yes,5.6,506,1500,Family_style
+Mau Café,Yes,Yes,5,415,1200,Family_style
+Masiku,Yes,No,5.2,4884,350,Family_style
+Okinyo Pilau,Yes,No,6,2556,1180,Family_style
+Halimu,Yes,Yes,5,354,1320,Family_style
+Ramogi Star,No,Yes,5,244,1320,Family_style
+Jemo Pizaa,No,No,7.4,84,1320,Family_style
