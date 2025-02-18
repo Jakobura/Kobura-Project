@@ -1,0 +1,217 @@
+##Load Dataframe
+
+library(readr)
+
+# Try reading the CSV file with UTF-8 encoding
+tryCatch({
+  dataframe <- read_csv("Data.csv", locale = locale(encoding = "UTF-8"))
+}, error = function(e) {
+  # If UTF-8 fails, try ISO-8859-1 encoding
+  dataframe <<- read_csv("Data.csv", locale = locale(encoding = "ISO-8859-1"))
+})
+
+# Display the first few rows of the data
+print(head(dataframe))
+
+# Summary of Dataframe
+
+## Summary
+summary(dataframe)
+
+## Structure of the Dataframe
+str(dataframe)
+
+## Columns
+colnames(dataframe)
+
+# Data Cleaning
+## Drop Null values
+dataframe <- na.omit(dataframe)
+
+## Remove columns with any missing value
+dataframe <- dataframe[, colSums(is.na(dataframe)) == 0]
+
+# Data Analysis
+## Total Number of Customers
+## Ensure the columns exist in the dataframe before proceeding
+if("new_customer" %in% colnames(dataframe) & "old_customers" %in% colnames(dataframe)) {
+  
+  # Ensure the columns are numeric
+  dataframe$new_customer <- as.numeric(dataframe$new_customer)
+  dataframe$old_customers <- as.numeric(dataframe$old_customers)
+  
+  # Create the new column by summing new and old customers
+  dataframe$total_customers <- dataframe$new_customer + dataframe$old_customers
+  
+  # Display the updated Dataframe
+  head(dataframe)
+} else {
+  stop("The dataframe must contain 'new_customers' and 'old_customers' columns.")
+}
+
+
+
+
+
+
+
+# Arrange the Hotels according to the Decreasing Number of Customers Served
+# Order the dataframe by total_customers in decreasing order
+dataframe <- dataframe[order(-dataframe$total_customers),]
+
+# Display the top 5 rows with only 'name' and 'total_customers' columns
+head(dataframe[, c("name", "total_customers")], 5)
+
+# Favorite Dish Type as per the Hotels
+library(ggplot2)
+
+# Create the count plot
+ggplot(dataframe, aes(x = dish_type, fill = dish_type)) +
+  geom_bar() + 
+  scale_fill_brewer(palette = "Set2") +  # Change palette for different colors
+  labs(
+    x = "Type of Dish",
+    y = "Count",
+    title = "Distribution of Dish Types"
+  ) +
+  theme_minimal() + 
+  theme(
+    text = element_text(size = 14),
+    plot.title = element_text(size = 16, face = "bold")
+  )
+
+# Pie Chart
+library(ggplot2)
+library(dplyr)
+
+# Summarize the data by summing 'approved' for each 'dish_type'
+grouped_data <- dataframe %>%
+  group_by(dish_type) %>%
+  summarise(agreed = sum(approved, na.rm = TRUE)) %>%
+  mutate(percentage = agreed / sum(agreed) * 100,  # Calculate percentages
+         angle = round(percentage * 3.6, 1),  # Convert percentage to degrees
+         label = paste0(dish_type, "\n", angle, "°"))  # Create label with name & degrees
+
+library(ggplot2)
+library(dplyr)
+
+# Summarize the data by summing 'approved' for each 'dish_type'
+grouped_data <- dataframe %>%
+  group_by(dish_type) %>%
+  summarise(agreed = sum(approved, na.rm = TRUE))  # Handle missing values safely
+
+# Create a pie chart
+ggplot(grouped_data, aes(x = "", y = agreed, fill = dish_type)) +
+  geom_bar(stat = "identity", width = 1, color = "black") +  # Black border for slices
+  coord_polar(theta = "y") +  # Convert bar chart into pie chart
+  scale_fill_brewer(palette = "Set2") +  # Use Set2 color palette for different colors
+  labs(
+    title = "Approvals per Dish",
+    fill = "Dish Type"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),  # Remove x-axis labels
+    axis.ticks = element_blank(),   # Remove axis ticks
+    panel.grid = element_blank(),   # Remove grid lines
+    plot.title = element_text(size = 16, face = "bold")
+  )
+
+# Ratings Distribution - Line Graph
+library(ggplot2)
+library(dplyr)
+
+# Summarize the data: count occurrences of each rating
+rating_counts <- dataframe %>%
+  group_by(`rating/10`) %>%
+  summarise(Frequency = n()) %>%
+  ungroup()
+
+# Create line graph
+ggplot(rating_counts, aes(x = `rating/10`, y = Frequency)) +
+  geom_line(color = "blue", size = 1) +  # Line plot with blue color
+  geom_point(color = "red", size = 3) +  # Highlight data points
+  labs(
+    title = "Ratings Distribution",
+    x = "Rating",
+    y = "Frequency"
+  ) +
+  scale_x_continuous(
+    breaks = seq(3, 11, by = 1),  # X-axis ticks at intervals of 1
+    limits = c(3, 11)  # Restrict x-axis range from 3 to 11
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title.x = element_text(size = 14),
+    axis.title.y = element_text(size = 14)
+  )
+
+#Price Distribution for Two Couples
+library(ggplot2)
+library(dplyr)
+
+# Convert column to a factor for discrete count plotting
+dataframe <- dataframe %>%
+  mutate(`price(for two couples)` = as.factor(`price(for two couples)`))
+
+# Create a count plot with different colors for each bar
+ggplot(dataframe, aes(x = `price(for two couples)`, fill = `price(for two couples)`)) +
+  geom_bar(color = "black", size = 1.2) +  # Adjusted line width with black borders
+  labs(
+    title = "Price Distribution for Two Couples",
+    x = "Price",
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title.x = element_text(size = 14),
+    axis.title.y = element_text(size = 14),
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotate x-axis labels for readability
+    legend.position = "none"  # Remove legend
+  )
+
+
+# Stacked Bar Charts
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(tidyr)  # For pivoting data
+
+# Load the data
+dataframe <- read_csv("Data.csv")
+
+# Clean column names (remove leading/trailing spaces)
+colnames(dataframe) <- trimws(colnames(dataframe))
+
+# Group by 'dish_type' and sum online_order and offline_order
+data_grouped <- dataframe %>%
+  group_by(dish_type) %>%
+  summarise(
+    online_order = sum(online_order, na.rm = TRUE),
+    offline_order = sum(offline_order, na.rm = TRUE)
+  ) %>%
+  pivot_longer(cols = c(online_order, offline_order), 
+               names_to = "order_type", values_to = "count")
+
+# Convert 'dish_type' to a factor to maintain order in the plot
+data_grouped$dish_type <- factor(data_grouped$dish_type, levels = unique(data_grouped$dish_type))
+
+# Create a stacked bar chart
+ggplot(data_grouped, aes(x = dish_type, y = count, fill = order_type)) +
+  geom_bar(stat = "identity", position = "stack", width = 0.6) +
+  labs(
+    title = "Comparison of Online and Offline Orders by Dish Type",
+    x = "Dish Type",
+    y = "Number of Orders",
+    fill = "Order Type"
+  ) +
+  scale_fill_manual(values = c("online_order" = "blue", "offline_order" = "darkgreen")) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold"),
+    axis.title.x = element_text(size = 14),
+    axis.title.y = element_text(size = 14),
+    axis.text.x = element_text(angle = 45, hjust = 1)  # Rotate x-axis labels for readability
+  )
